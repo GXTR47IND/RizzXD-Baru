@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RishzenNih47 Offc - Store</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            margin-bottom: 30px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #00dbde, #fc00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.8;
+            margin-top: 10px;
+        }
+        
+        .telegram-info {
+            text-align: center;
+            margin: 25px 0;
+            padding: 15px;
+            background: rgba(0, 136, 204, 0.2);
+            border-radius: 10px;
+            font-weight: 500;
+            border: 1px solid rgba(0, 136, 204, 0.5);
+            backdrop-filter: blur(5px);
+        }
+        
+        .telegram-info a {
+            color: #00acee;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .telegram-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .product-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(45deg, #00dbde, #fc00ff);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        .product-name {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+        
+        .product-price {
+            font-size: 1.5rem;
+            color: #00dbde;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(0, 219, 222, 0.5);
+        }
+        
+        .product-description {
+            color: #aaa;
+            margin-bottom: 20px;
+            flex-grow: 1;
+            line-height: 1.5;
+        }
+        
+        .buy-button {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(45deg, #00dbde, #fc00ff);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .buy-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #00c9cc, #e600e6);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 25px;
+            color: #aaa;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .products {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+        }
+        
+        /* Animasi untuk judul */
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px rgba(0, 219, 222, 0.5); }
+            50% { text-shadow: 0 0 20px rgba(252, 0, 255, 0.8); }
+            100% { text-shadow: 0 0 5px rgba(0, 219, 222, 0.5); }
+        }
+        
+        .glow-text {
+            animation: glow 3s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="glow-text">RishzenNih47 Offc</h1>
+            <p class="subtitle">Toko Resmi Panel Pterodactyl & Layanan Terkait</p>
+        </header>
+        
+        <div class="telegram-info">
+            Untuk pemesanan, silakan hubungi kami melalui Telegram: 
+            <a href="https://t.me/RishzenNih47" target="_blank">@RishzenNih47</a>
+        </div>
+        
+        <div class="products">
+            <!-- Produk 1 -->
+            <div class="product-card">
+                <h3 class="product-name">PANEL PTERODACTYL</h3>
+                <div class="product-price">Rp5.000</div>
+                <p class="product-description">Panel Pterodactyl dengan fitur lengkap untuk mengelola server game Anda dengan mudah dan efisien.</p>
+                <a href="https://t.me/RishzenNih47" class="buy-button" target="_blank">Pesan via Telegram</a>
+            </div>
+            
+            <!-- Produk 2 -->
+            <div class="product-card">
+                <h3 class="product-name">RESELLER PANEL</h3>
+                <div class="product-price">Rp7.000</div>
+                <p class="product-description">Panel khusus reseller dengan keuntungan lebih dan akses penuh untuk bisnis hosting Anda.</p>
+                <a href="https://t.me/RishzenNih47" class="buy-button" target="_blank">Pesan via Telegram</a>
+            </div>
+            
+            <!-- Produk 3 -->
+            <div class="product-card">
+                <h3 class="product-name">ADMIN PANEL</h3>
+                <div class="product-price">Rp10.000</div>
+                <p class="product-description">Panel admin dengan kontrol penuh atas sistem dan pengguna untuk manajemen yang optimal.</p>
+                <a href="https://t.me/RishzenNih47" class="buy-button" target="_blank">Pesan via Telegram</a>
+            </div>
+            
+            <!-- Produk 4 -->
+            <div class="product-card">
+                <h3 class="product-name">PARTNER PANEL</h3>
+                <div class="product-price">Rp14.000</div>
+                <p class="product-description">Panel partner dengan fitur khusus untuk kemitraan jangka panjang dan keuntungan bersama.</p>
+                <a href="https://t.me/RishzenNih47" class="buy-button" target="_blank">Pesan via Telegram</a>
+            </div>
+            
+            <!-- Produk 5 -->
+            <div class="product-card">
+                <h3 class="product-name">OWNER PANEL</h3>
+                <div class="product-price">Rp16.000</div>
+                <p class="product-description">Panel owner dengan akses tertinggi dan kontrol penuh sistem untuk pengelolaan maksimal.</p>
+                <a href="https://t.me/RishzenNih47" class="buy-button" target="_blank">Pesan via Telegram</a>
+            </div>
+            
+            <!-- Produk 6 -->
+            <div class="product-card">
+                <h3 class="product-name">TANGAN KANAN</h3>
+                <div class="product-price">Rp20.000</div>
+                <p class="product-description">Akses khusus sebagai tangan kanan dengan privilege khusus dan wewenang tambahan.</p>
+                <a href="https://t.me/RishzenNih47" class="buy-button" target="_blank">Pesan via Telegram</a>
+            </div>
+            
+            <!-- Produk 7 -->
+            <div class="product-card">
+                <h3 class="product-name">NOKOS ALL NEGARA</h3>
+                <div class="product-price">Rp1.000 - 25.000</div>
+                <p class="product-description">Layanan nomor kosong (NOKOS) dari berbagai negara dengan harga bervariasi sesuai kebutuhan.</p>
+                <a href="https://t.me/RishzenNih47" class="buy-button" target="_blank">Pesan via Telegram</a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy; 2023 RishzenNih47 Offc. All rights reserved.</p>
+            <p>Contact: <a href="https://t.me/RishzenNih47" target="_blank" style="color: #00acee;">t.me/RishzenNih47</a></p>
+        </footer>
+    </div>
+
+    <script>
+        // Menambahkan efek ketik pada judul
+        document.addEventListener('DOMContentLoaded', function() {
+            const title = document.querySelector('h1');
+            const originalText = title.textContent;
+            title.textContent = '';
+            
+            let i = 0;
+            const typeWriter = () => {
+                if (i < originalText.length) {
+                    title.textContent += originalText.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            };
+            
+            // Mulai efek ketik setelah halaman dimuat
+            setTimeout(typeWriter, 500);
+        });
+    </script>
+</body>
+</html>
